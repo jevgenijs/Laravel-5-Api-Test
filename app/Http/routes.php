@@ -13,9 +13,11 @@
 
 Route::get('/', 'WelcomeController@home');
 
-Route::resource('api/test', 'WelcomeController@test');
+Route::get('api/test', 'WelcomeController@test');
+Route::get('api/cache', 'WelcomeController@test');
+
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+		'auth' => 'Auth\AuthController',
+		'password' => 'Auth\PasswordController',
 ]);

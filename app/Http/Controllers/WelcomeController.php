@@ -14,6 +14,17 @@ class WelcomeController extends Controller {
 	*/
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		//$this->middleware('auth');
+	}
+
+
+	/**
 	 * Show the application welcome screen to the user.
 	 *
 	 * @return Response
@@ -27,8 +38,8 @@ class WelcomeController extends Controller {
 	{
 		return \Response::json(
                 array(
-                    'data' => 'aa' . $id
-                ), 201
+                    'data' => 'aa ' . $id
+                ), 200
             );
 	}
 
