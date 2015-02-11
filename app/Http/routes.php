@@ -15,6 +15,7 @@ Route::get('/', 'WelcomeController@home');
 
 Route::get('api/test', 'WelcomeController@test');
 Route::get('api/cache', 'WelcomeController@test');
+Route::get('angular', 'WelcomeController@angular');
 
 
 Route::controllers([

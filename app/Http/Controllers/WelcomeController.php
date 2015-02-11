@@ -43,4 +43,9 @@ class WelcomeController extends Controller {
             );
 	}
 
+	public function angular($id = 0)
+	{
+		return view('angular');
+	}
+
 }
