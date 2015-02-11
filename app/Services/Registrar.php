@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace ESMNGR\Services;
 
-use App\User;
+use ESMNGR\Models\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
