@@ -1,5 +1,12 @@
-angular.module('commentCtrl', [])
 
+commentApp.controller("commentController", function($scope, Comment) {
+  Comment.query(function(data) {
+    $scope.comments = data;
+  });
+});
+
+
+/*angular.module('commentCtrl', [])
 .controller('commentController', ['$scope', '$http', 'Comment',
     function($scope, $http, Comment) {
     $scope.commentData = {};
@@ -44,4 +51,4 @@ angular.module('commentCtrl', [])
                     });
             });
     };
-}]);
+}]);*/

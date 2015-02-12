@@ -2,6 +2,7 @@
 
 use ESMNGR\Models\Comment;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 //use Illuminate\Http\Request;
 
@@ -34,13 +35,9 @@ class CommentController extends Controller {
 	 */
 	public function store()
 	{
+		$comment = Comment::create(\Input::get());
 
-		Comment::create(array(
-            'author' => \Input::get('author'),
-            'text' => \Input::get('text')
-        ));
-
-        return \Response::json(array('success' => true));
+        return \Response::json($comment, Response::HTTP_CREATED);
 	}
 
 	/**
@@ -87,7 +84,7 @@ class CommentController extends Controller {
 		$comment = Comment::find($id);
 		$comment->delete();
 
-        return \Response::json(array('success' => true));
+        return \Response::make('', Response::HTTP_NO_CONTENT);
 	}
 
 }

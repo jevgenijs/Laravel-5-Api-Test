@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+require('./gulp/jshint');
 require('laravel-elixir-browserify');
 
 /*
@@ -12,15 +13,7 @@ require('laravel-elixir-browserify');
  |
  */
 
-/*elixir(function(mix) {
-    mix.browserify("app.js", {
-        debug: true,
-        insertGlobals: true,
-        output: "public/js",
-        rename: "bundle.js"
-    });
-});*/
-
 elixir(function(mix) {
-    mix.browserify("app.js");
+    mix.jshint()
+       .browserify("app.js");
 });
