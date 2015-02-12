@@ -1,5 +1,7 @@
 <?php namespace ESMNGR\Http\Controllers;
 
+use ESMNGR\Models\User;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -34,18 +36,21 @@ class WelcomeController extends Controller {
 		return view('welcome');
 	}
 
-	public function test($id = 0)
+	public function users($id = 0)
 	{
-		return \Response::json(
-                array(
-                    'data' => 'aa ' . $id
-                ), 200
-            );
+
+		return \Response::json(User::all());
 	}
 
 	public function angular($id = 0)
 	{
 		return view('angular');
+	}
+
+
+	public function comments($id = 0)
+	{
+		return view('comments');
 	}
 
 }

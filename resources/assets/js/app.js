@@ -1,9 +1,5 @@
 require('angular');
-console.log('hello');
-var myapp = angular.module("myapp", []);
+require('./controllers/commentCtrl');
+require('./services/commentService');
 
-myapp.controller("HelloController", function($scope) {
-    $scope.helloTo = {};
-    $scope.helloTo.title = "World, AngularJS";
-    $scope.helloTo.changed = "I changed";
-} );
+var commentApp = angular.module('commentApp', ['commentCtrl', 'commentService']);

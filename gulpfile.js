@@ -12,6 +12,14 @@ require('laravel-elixir-browserify');
  |
  */
 
+/*elixir(function(mix) {
+    mix.browserify("app.js", {
+        debug: true,
+        insertGlobals: true,
+        output: "public/js",
+        rename: "bundle.js"
+    });
+});*/
 
 elixir(function(mix) {
     mix.browserify("app.js");

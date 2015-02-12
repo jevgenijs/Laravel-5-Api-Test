@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', 'WelcomeController@home');
-
-Route::get('api/test', 'WelcomeController@test');
-Route::get('api/cache', 'WelcomeController@test');
+Route::get('/', 'WelcomeController@index');
 Route::get('angular', 'WelcomeController@angular');
+Route::get('comments', 'WelcomeController@comments');
 
+Route::group(array('prefix' => 'api'), function() {
+
+	Route::get('users', 'WelcomeController@users');
+	Route::resource('comments', 'CommentController');
+	Route::get('cache', 'WelcomeController@test');
+
+});
 
 Route::controllers([
 		'auth' => 'Auth\AuthController',
 		'password' => 'Auth\PasswordController',
 ]);
+

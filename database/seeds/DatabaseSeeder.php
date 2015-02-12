@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
+		$this->call('CommentTableSeeder');
+        $this->command->info('Comment table seeded.');
 		// $this->call('UserTableSeeder');
 	}
 
