@@ -5,6 +5,21 @@ try {
   module = angular.module('partialsModule', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('test.htm',
+    '<body>\n' +
+    'Hello\n' +
+    '</body>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('partialsModule');
+} catch (e) {
+  module = angular.module('partialsModule', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('index.html',
     ' <div class="col-md-8 col-md-offset-2" style="padding:20px;position:relative;left:10%;">\n' +
     '\n' +
