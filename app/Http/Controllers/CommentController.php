@@ -70,7 +70,10 @@ class CommentController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$comment = Comment::find($id);
+		$comment->text = \Input::get('text');
+		$comment->save();
+		return \Response::json($comment);
 	}
 
 	/**

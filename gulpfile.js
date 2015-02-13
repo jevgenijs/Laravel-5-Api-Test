@@ -1,6 +1,7 @@
 var elixir = require('laravel-elixir');
 require('./gulp/jshint');
 require('laravel-elixir-browserify');
+require('laravel-elixir-ng-html2js');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,5 +16,6 @@ require('laravel-elixir-browserify');
 
 elixir(function(mix) {
     mix.jshint()
+       .ngHtml2Js()
        .browserify("app.js");
 });
