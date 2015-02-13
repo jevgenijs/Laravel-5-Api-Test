@@ -1,0 +1,10 @@
+<div ng-include src="'menu.html'" scope="" onload=""></div>
+<div style="padding:20px;position:absolute;left:10%;top:0;">
+  	<h3>Comment #{{ comment.id }} by {{ comment.author }}</h3>
+    <p ng-hide="editComment">{{ comment.text }}</p>
+    <div ng-show="editComment">
+    	<textarea class="form-control input-lg" name="comment" ng-model="comment.text" placeholder="Say what you have to say" style="min-width:300px;max-width:300px;"></textarea>
+    </div>
+
+    <a href="#/comments">BACK</a>
+</div>

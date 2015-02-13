@@ -1,7 +1,9 @@
-angular.module('commentApp.CommentsController', []).controller("CommentsController", function($scope, Comment) {
+angular.module('commentApp.CommentsController', [])
 
+.controller("CommentsController", function($scope, Comment) {
   $scope.loadComments = function() {
       Comment.query(function(data) {
+        console.log('query');
         $scope.comments = data;
       });
   };
@@ -30,5 +32,11 @@ angular.module('commentApp.CommentsController', []).controller("CommentsControll
   $scope.bgColor = function() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
   };
+
   $scope.loadComments();
-});
+})
+
+.controller('SingleCommentController', ['$scope', '$routeParams','Comment',
+  function($scope, $routeParams, Comment) {
+    $scope.comment = Comment.get({id:$routeParams.id}, function() {});
+}]);

@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@comments');
 Route::get('angular', 'WelcomeController@angular');
-Route::get('comments', 'WelcomeController@comments');
 
 Route::group(array('prefix' => 'api'), function() {
 

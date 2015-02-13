@@ -9,8 +9,16 @@ var commentApp = angular.module('commentApp', ['ngResource', 'ngRoute', 'partial
 commentApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-          templateUrl: 'index.html',
+          templateUrl: 'welcome.html',
           controller: 'CommentsController'
+        })
+        .when('/comments', {
+          templateUrl: 'comments.html',
+          controller: 'CommentsController'
+        })
+        .when('/comments/:id', {
+          templateUrl: 'single-comment.html',
+          controller: 'SingleCommentController'
         })
         .otherwise({ redirectTo: '/' });
 });
@@ -18,9 +26,8 @@ commentApp.config(function($routeProvider) {
 commentApp.factory("Comment", function($resource) {
   return $resource("/api/comments/:id", {id:'@id'},
           {
-            update: {
-              method: 'PUT',
-            }
+            get: { cache: true, method: 'get' },
+            update: { method: 'PUT' },
           });
 });
 
