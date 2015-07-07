@@ -24,6 +24,7 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '    <div class="form-group text-right">\n' +
     '        <button type="submit" class="btn btn-primary btn-lg" ng-click="newComment()">Submit</button>\n' +
+    '        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendMessage()">test</button>\n' +
     '    </div>\n' +
     '\n' +
     '    <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>\n' +
