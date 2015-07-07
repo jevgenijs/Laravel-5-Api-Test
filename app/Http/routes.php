@@ -18,6 +18,7 @@ Route::group(array('prefix' => 'api'), function() {
 
 	Route::get('users', 'WelcomeController@users');
 	Route::resource('comments', 'CommentController');
+	Route::resource('players', 'PlayerController');
 	Route::get('cache', 'WelcomeController@test');
 
 });
