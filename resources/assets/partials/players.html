@@ -1,0 +1,27 @@
+<div ng-include src="'menu.html'" scope="" onload=""></div>
+
+<div class="col-md-8 col-md-offset-2" style="padding:20px;position:absolute;left:10%;top:0;">
+    <div class="page-header">
+        <h2>Laravel and Angular Single Page Application</h2>
+        <h4>Players section</h4>
+    </div>
+
+    <div class="form-group text-right">
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="newPlayer()">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendMessage()">test</button>
+    </div>
+
+    <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
+    <br/>
+    <br/>
+    <div class="comment" ng-hide="loading" ng-repeat="player in players" style="max-width: 350px; padding:10px; border: 1px solid black; padding-top:5px;">
+        <h3>player #{{ player.id }} </h3>
+        <div>
+            {{ player }}
+        </div>
+
+        <span><a ng-click="deletePlayer(player, $index)" class="text-muted">Delete</a></span>
+        <span ng-hide="editPlayer" ><a ng-click="editPlayer = true" class="text-muted">Edit</a></span>
+        <span ng-hide="editPlayer" ><a ng-href="#/players/{{player.id}}" class="text-muted">View</a></span>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div ng-include src="'menu.html'" scope="" onload=""></div>
+<div style="padding:20px;position:absolute;left:10%;top:0;">
+  	<pre> {{ player }}</pre>
+
+    <div ng-show="editPlayer">
+    	<textarea class="form-control input-lg" name="player" ng-model="player.text" placeholder="Say what you have to say" style="min-width:300px;max-width:300px;"></textarea>
+    </div>
+
+    <a href="#/players">BACK</a>
+</div>

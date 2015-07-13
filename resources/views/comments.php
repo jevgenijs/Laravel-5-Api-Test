@@ -13,7 +13,7 @@
             .tabs-data {background: #dbeaf0; padding: 15px;}
             .tabs-data h1 {font-size: 1.6em;}
         </style>
-        <script src="js/app.js"></script>
+        <script src="js/bundle.js"></script>
       <!--     <script src="js/mainCtrl.js"></script>
         <script src="js/commentService.js"></script> -->
     </head>
