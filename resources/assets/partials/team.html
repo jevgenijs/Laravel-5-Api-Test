@@ -1,0 +1,57 @@
+<div ng-include src="'menu.html'" scope="" onload=""></div>
+
+<div class="col-md-8 col-md-offset-2" style="padding:20px;position:absolute;left:10%;top:0;">
+    <div class="page-header">
+        <h2>Laravel and Angular Single Page Application</h2>
+        <h4>Team</h4>
+    </div>
+
+    <h2>Starting Roster</h2>
+
+    <div class="form-group text-right">
+        <table>
+            <tr>
+                <td style="width:50px;">Top</td>
+                <td style="width:50px;">Jungle</td>
+                <td style="width:50px;">Mid</td>
+                <td style="width:50px;">ADC</td>
+                <td style="width:50px;">Support</td>
+            </tr>
+            <tr>
+                <td style="width:50px;">{{team.pl1}}</td>
+                <td style="width:50px;">{{team.pl2}}</td>
+                <td style="width:50px;">{{team.pl3}}</td>
+                <td style="width:50px;">{{team.pl4}}</td>
+                <td style="width:50px;">{{team.pl5}}</td>
+            </tr>
+            <tr>
+                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(1)">Select</button></td>
+                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(2)">Select</button></td>
+                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(3)">Select</button></td>
+                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(4)">Select</button></td>
+                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(5)">Select</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+    {{team}}
+
+    <div ng-repeat="player in players">
+        {{player.name}}
+    </div>
+
+<!--     <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
+    <br/>
+    <br/>
+    <div class="comment" ng-hide="loading" ng-repeat="player in players" style="max-width: 350px; padding:10px; border: 1px solid black; padding-top:5px;">
+        <h3>player #{{ player.id }} </h3>
+        <div>
+            {{ player }}
+        </div>
+
+        <span><a ng-click="deletePlayer(player, $index)" class="text-muted">Delete</a></span>
+        <span ng-hide="editPlayer" ><a ng-click="editPlayer = true" class="text-muted">Edit</a></span>
+        <span ng-hide="editPlayer" ><a ng-href="#/players/{{player.id}}" class="text-muted">View</a></span>
+    </div> -->
+</div>

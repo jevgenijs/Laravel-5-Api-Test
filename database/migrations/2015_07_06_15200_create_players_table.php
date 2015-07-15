@@ -84,7 +84,28 @@ class CreatePlayersTable extends Migration {
 			$table->integer('sk8');
 			$table->integer('sk9');
 			$table->integer('sk10');
+			$table->integer('team_id');
 		});
+
+		Schema::create('teams', function(Blueprint $table)
+		{
+			$table->increments('id')->unique();
+			$table->string('name');
+			$table->string('logo');
+			$table->timestamp('founded');
+			$table->integer('manager');
+			$table->integer('pl1');
+			$table->integer('pl2');
+			$table->integer('pl3');
+			$table->integer('pl4');
+			$table->integer('pl5');
+			$table->integer('coach');
+			$table->integer('staff');
+			$table->integer('synergy');
+			$table->integer('momentum');
+			$table->integer('mood');
+		});
+
 	}
 
 	/**

@@ -67,6 +67,9 @@ module.run(['$templateCache', function($templateCache) {
     '	         <li >\n' +
     '	            <a class="btn-lg" href="#/players">Players</a>\n' +
     '	        </li>\n' +
+    '	        <li>\n' +
+    '	            <a class="btn-lg" href="#/team">Team</a>\n' +
+    '	        </li>\n' +
     '	    </ul>\n' +
     '	</div>\n' +
     '</div>\n' +
@@ -152,6 +155,75 @@ module.run(['$templateCache', function($templateCache) {
     '    </div>\n' +
     '\n' +
     '    <a href="#/players">BACK</a>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('partialsModule');
+} catch (e) {
+  module = angular.module('partialsModule', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('team.html',
+    '<div ng-include src="\'menu.html\'" scope="" onload=""></div>\n' +
+    '\n' +
+    '<div class="col-md-8 col-md-offset-2" style="padding:20px;position:absolute;left:10%;top:0;">\n' +
+    '    <div class="page-header">\n' +
+    '        <h2>Laravel and Angular Single Page Application</h2>\n' +
+    '        <h4>Team</h4>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <h2>Starting Roster</h2>\n' +
+    '\n' +
+    '    <div class="form-group text-right">\n' +
+    '        <table>\n' +
+    '            <tr>\n' +
+    '                <td style="width:50px;">Top</td>\n' +
+    '                <td style="width:50px;">Jungle</td>\n' +
+    '                <td style="width:50px;">Mid</td>\n' +
+    '                <td style="width:50px;">ADC</td>\n' +
+    '                <td style="width:50px;">Support</td>\n' +
+    '            </tr>\n' +
+    '            <tr>\n' +
+    '                <td style="width:50px;">{{team.pl1}}</td>\n' +
+    '                <td style="width:50px;">{{team.pl2}}</td>\n' +
+    '                <td style="width:50px;">{{team.pl3}}</td>\n' +
+    '                <td style="width:50px;">{{team.pl4}}</td>\n' +
+    '                <td style="width:50px;">{{team.pl5}}</td>\n' +
+    '            </tr>\n' +
+    '            <tr>\n' +
+    '                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(1)">Select</button></td>\n' +
+    '                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(2)">Select</button></td>\n' +
+    '                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(3)">Select</button></td>\n' +
+    '                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(4)">Select</button></td>\n' +
+    '                <td style="width:50px;"><button type="submit" class="btn btn-primary btn-lg" ng-click="selectPlayer(5)">Select</button></td>\n' +
+    '            </tr>\n' +
+    '\n' +
+    '        </table>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    {{team}}\n' +
+    '\n' +
+    '    <div ng-repeat="player in players">\n' +
+    '        {{player.name}}\n' +
+    '    </div>\n' +
+    '\n' +
+    '<!--     <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>\n' +
+    '    <br/>\n' +
+    '    <br/>\n' +
+    '    <div class="comment" ng-hide="loading" ng-repeat="player in players" style="max-width: 350px; padding:10px; border: 1px solid black; padding-top:5px;">\n' +
+    '        <h3>player #{{ player.id }} </h3>\n' +
+    '        <div>\n' +
+    '            {{ player }}\n' +
+    '        </div>\n' +
+    '\n' +
+    '        <span><a ng-click="deletePlayer(player, $index)" class="text-muted">Delete</a></span>\n' +
+    '        <span ng-hide="editPlayer" ><a ng-click="editPlayer = true" class="text-muted">Edit</a></span>\n' +
+    '        <span ng-hide="editPlayer" ><a ng-href="#/players/{{player.id}}" class="text-muted">View</a></span>\n' +
+    '    </div> -->\n' +
     '</div>\n' +
     '');
 }]);

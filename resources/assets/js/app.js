@@ -3,9 +3,10 @@ require('angular-resource/angular-resource.min');
 require('angular-route/angular-route.min');
 require('./controllers/CommentsController');
 require('./controllers/PlayersController');
+require('./controllers/TeamController');
 require('./partials');
 
-var commentApp = angular.module('commentApp', ['ngResource', 'ngRoute', 'partialsModule', 'commentApp.CommentsController', 'commentApp.PlayersController']);
+var commentApp = angular.module('commentApp', ['ngResource', 'ngRoute', 'partialsModule', 'commentApp.CommentsController', 'commentApp.PlayersController', 'commentApp.TeamController']);
 
 commentApp.config(function($routeProvider) {
     $routeProvider
@@ -24,6 +25,10 @@ commentApp.config(function($routeProvider) {
         .when('/players', {
           templateUrl: 'players.html',
           controller: 'PlayersController'
+        })
+        .when('/team', {
+          templateUrl: 'team.html',
+          controller: 'TeamController'
         })
         .when('/players/:id', {
           templateUrl: 'single-player.html',
@@ -48,5 +53,11 @@ commentApp.factory("Player", function($resource) {
           });
 });
 
-
+commentApp.factory("Team", function($resource) {
+  return $resource("/api/teams/:id", {id:'@id'},
+          {
+            get: { cache: true, method: 'get' },
+            update: { method: 'PUT' },
+          });
+});
 

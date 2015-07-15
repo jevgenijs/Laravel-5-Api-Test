@@ -17,7 +17,7 @@ class Player extends Model {
 	 * @var array
 	 */
 	protected $fillable = ['name', 'surname', 'nickname', 'age', 'wage', 'form', 'exp', 'leadership', 'tsp', 'tp','loyalty', 'specialty',
-							 'sk1', 'sk2', 'sk3', 'sk4', 'sk5', 'sk6', 'sk7', 'sk8', 'sk9', 'sk10'];
+							 'sk1', 'sk2', 'sk3', 'sk4', 'sk5', 'sk6', 'sk7', 'sk8', 'sk9', 'sk10', 'team_id'];
 
 	public $timestamps = false;
 
