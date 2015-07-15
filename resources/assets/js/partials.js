@@ -64,8 +64,50 @@ module.run(['$templateCache', function($templateCache) {
     '	        <li >\n' +
     '	            <a class="btn-lg" href="#/comments">Comments</a>\n' +
     '	        </li>\n' +
+    '	         <li >\n' +
+    '	            <a class="btn-lg" href="#/players">Players</a>\n' +
+    '	        </li>\n' +
     '	    </ul>\n' +
     '	</div>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('partialsModule');
+} catch (e) {
+  module = angular.module('partialsModule', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('players.html',
+    '<div ng-include src="\'menu.html\'" scope="" onload=""></div>\n' +
+    '\n' +
+    '<div class="col-md-8 col-md-offset-2" style="padding:20px;position:absolute;left:10%;top:0;">\n' +
+    '    <div class="page-header">\n' +
+    '        <h2>Laravel and Angular Single Page Application</h2>\n' +
+    '        <h4>Players section</h4>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <div class="form-group text-right">\n' +
+    '        <button type="submit" class="btn btn-primary btn-lg" ng-click="newPlayer()">Submit</button>\n' +
+    '        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendMessage()">test</button>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>\n' +
+    '    <br/>\n' +
+    '    <br/>\n' +
+    '    <div class="comment" ng-hide="loading" ng-repeat="player in players" style="max-width: 350px; padding:10px; border: 1px solid black; padding-top:5px;">\n' +
+    '        <h3>player #{{ player.id }} </h3>\n' +
+    '        <div>\n' +
+    '            {{ player }}\n' +
+    '        </div>\n' +
+    '\n' +
+    '        <span><a ng-click="deletePlayer(player, $index)" class="text-muted">Delete</a></span>\n' +
+    '        <span ng-hide="editPlayer" ><a ng-click="editPlayer = true" class="text-muted">Edit</a></span>\n' +
+    '        <span ng-hide="editPlayer" ><a ng-href="#/players/{{player.id}}" class="text-muted">View</a></span>\n' +
+    '    </div>\n' +
     '</div>\n' +
     '');
 }]);
@@ -88,6 +130,28 @@ module.run(['$templateCache', function($templateCache) {
     '    </div>\n' +
     '\n' +
     '    <a href="#/comments">BACK</a>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('partialsModule');
+} catch (e) {
+  module = angular.module('partialsModule', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('single-player.html',
+    '<div ng-include src="\'menu.html\'" scope="" onload=""></div>\n' +
+    '<div style="padding:20px;position:absolute;left:10%;top:0;">\n' +
+    '  	<pre> {{ player }}</pre>\n' +
+    '\n' +
+    '    <div ng-show="editPlayer">\n' +
+    '    	<textarea class="form-control input-lg" name="player" ng-model="player.text" placeholder="Say what you have to say" style="min-width:300px;max-width:300px;"></textarea>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <a href="#/players">BACK</a>\n' +
     '</div>\n' +
     '');
 }]);
